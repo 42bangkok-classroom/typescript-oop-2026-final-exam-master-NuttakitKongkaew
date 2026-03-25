@@ -1,12 +1,12 @@
 classDiagram
-    namespace product {
-        class ProductController {
-            -ProductService productService
-            +GET findAll()
-            +GET findOne(id: number)
-            +POST create(createProductDto: CreateProductDto)
-        }
-        
+namespace product {
+class ProductController {
+-ProductService productService
++GET findAll()
++GET findOne(id: number)
++POST create(createProductDto: CreateProductDto)
+}
+
         class ProductService {
             <<service>>
             -Product[] products
@@ -15,7 +15,7 @@ classDiagram
             +findOne(id: number) Product
             +create(createProductDto: CreateProductDto) Product
         }
-        
+
         class Product {
             <<interface>>
             +number id
@@ -24,7 +24,7 @@ classDiagram
             +number stock
             +string description
         }
-        
+
         class CreateProductDto {
             +string name
             +number price
@@ -32,7 +32,7 @@ classDiagram
             +string description
         }
     }
-    
+
     namespace purchase {
         class PurchaseController {
             -PurchaseService purchaseService
@@ -45,7 +45,7 @@ classDiagram
             +GET getSummary()
             +GET getTopProducts(limit: number)
         }
-        
+
         class PurchaseService {
             <<service>>
             -Purchase[] purchases
@@ -60,7 +60,7 @@ classDiagram
             +getSalesReport() SalesReportDto[]
             +getTopProducts(limit: number) TopProductDto[]
         }
-        
+
         class Purchase {
             <<interface>>
             +number id
@@ -69,26 +69,26 @@ classDiagram
             +PurchaseItem[] items
             +number totalPrice
         }
-        
+
         class PurchaseItem {
             <<interface>>
             +number productId
             +number quantity
             +number price
         }
-        
+
         class UpdatePurchaseDto {
             +string customerName
             +Date purchaseDate
             +PurchaseItemDto[] items
         }
-        
+
         class PurchaseItemDto {
             +number productId
             +number quantity
         }
     }
-    
+
     ProductController ..> ProductService : uses
     PurchaseController ..> PurchaseService : uses
     PurchaseController ..> ProductService : uses

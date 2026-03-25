@@ -6,4 +6,3 @@
   - สร้าง `ProductService`
   - สร้าง DTO ที่เกี่ยวข้อง (เช่น `CreateProductDto`)
 - ให้ดูโครงสร้างและความสัมพันธ์จาก `data/uml.md` ประกอบ
-

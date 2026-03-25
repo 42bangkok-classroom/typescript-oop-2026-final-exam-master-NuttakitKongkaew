@@ -6,4 +6,3 @@
   - สร้าง `PurchaseService`
   - สร้าง DTO ที่เกี่ยวข้อง (เช่น `CreatePurchaseDto`, `UpdatePurchaseDto`)
 - ให้ดูโครงสร้างและความสัมพันธ์จาก `data/uml.md` ประกอบ
-
